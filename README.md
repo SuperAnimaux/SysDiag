@@ -16,10 +16,12 @@ Copiez ce projet sur votre ordinateur :
 
 ```bash
 git clone https://github.com/SuperAnimaux/SysDiag.git
+```
 
 Exécutez le fichier main.py :
 
 ```bash
 python main.py
+```
 
 **L'installation de Python et de certains modules annexes est nécessaire, des instructions plus précises seront disponibles dans les prochaines versions.**
