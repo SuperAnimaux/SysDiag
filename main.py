@@ -8,6 +8,11 @@ from WindowsTools.windowsLogsCheck import show_list
 from WindowsTools.windowsLogsCheck import check_all_evtx
 from WindowsTools.windowsUpdate import checkUpdates
 from DiskTools.general_infos import get_disk_info
+from hardwareInfos.modelInfos import get_motherboard_model
+from hardwareInfos.modelInfos import get_cpu_model
+from hardwareInfos.modelInfos import get_gpu_model
+from hardwareInfos.modelInfos import get_ram_model
+from hardwareInfos.modelInfos import get_disk_model
 
 
 LOGS_PATH = r"C:\Windows\System32\winevt\Logs"
@@ -18,6 +23,7 @@ def main():
 
     while True:
         print("---------Commandes-------------")
+        print("Hardware information : hardwareInfos")
         print("Charge CPU : chargeCPU")
         print("Charge RAM: chargeRAM")
         print("Disk infos : diskInfos")
@@ -30,7 +36,9 @@ def main():
 
         command = input("-------Entrez votre commande------\n>> ").strip()
 
-        if command == "chargeCPU":
+        if command == "hardwareInfos":
+            hardwareInfos()
+        elif command == "chargeCPU":
             charge(True)
         elif command == "chargeRAM":
             charge(False, True)
@@ -106,6 +114,16 @@ def windowsTools(check=False, list=False, update=False):
         except Exception as e:
             print(f"Une erreur est survenue, veuillez essayer dans quelques instants. {e}")
 
+def hardwareInfos():
+    try:
+        get_motherboard_model()
+        get_cpu_model()
+        get_gpu_model()
+        get_ram_model()
+        get_disk_model()
+
+    except Exception as e:
+        print(f"Une erreur est survenue, veuillez essayer dans quelques instants. {e}")
 
 def is_program_admin():
     try:
