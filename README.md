@@ -5,10 +5,11 @@ Cet outil est conçu pour réunir en un seul endroit les fonctionnalités néces
 
 * Visualisation de la charge CPU  
 * Visualisation de l'utilisation de la RAM  
+* Informations générales sur le stockage
 * Visualisation de l'utilisation du stockage (HDD/SSD)  
 * Vérification des mises à jour Windows  
 * Listage des logs Windows  
-* Vérification de l'intégrité des logs Windows  
+* Vérification de l'intégrité des logs Windows (admin)
 
 ## Installation  
 
