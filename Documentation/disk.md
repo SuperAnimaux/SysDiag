@@ -1,21 +1,10 @@
-# CPU diagnostic information
-Read this documentation, to learn more about processor diagnostic with SysDiag.
-
-## Architecture codes:
-
-CPU, can have various architectures. The architectures defined the way that the CPU manage instructions. 
-
-* x86 : Code 0
-* MIPS : Code 1
-* Alpha : Code 2
-* PowerPC : Code 3
-* ARM : Code 5
-* ia64 : Code 6
-* itanium system : Code 7-8
-* x64 : Code 9
-* ARM64 : Code 12
+# Disk diagnostic information
+Read this documentation, to learn more about disk diagnostic with SysDiag.
+*Please,for retrieving deleted data, use TestDisk.*
 
 ## Availability codes:
+
+The availability let you know the state of the disk.
 
 * Other : Code 1
 * Unknown : Code 2

@@ -8,8 +8,9 @@ def get_BIOS_infos():
         BIOS_infos = service.ExecQuery("SELECT * FROM Win32_BIOS")
 
         for BIOS in BIOS_infos:
-            print(f"-------------\nBIOS name: {BIOS.Name}\nBIOS version : {BIOS.BIOSVersion}\nManufacturer : {BIOS.Manufacturer}\nSerial number : {BIOS.SerialNumber}\nStatus : {BIOS.Status}")
+            print(f"-------------\nBIOS name: {BIOS.Name}\nBIOS version : {BIOS.Version}\nManufacturer : {BIOS.Manufacturer}\nSerial number : {BIOS.SerialNumber}\nStatus : {BIOS.Status}")
 
     except Exception as e:
         print(e)
+
 

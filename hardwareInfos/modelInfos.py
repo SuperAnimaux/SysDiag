@@ -13,7 +13,7 @@ def get_cpu_model():
 
 
     except Exception as e:
-        print(f"Erreur lors de la récupération du processeur: {e}")
+        print(f"An error has occurred: {e}")
 
 def get_disk_model():
     try:
@@ -29,7 +29,7 @@ def get_disk_model():
 
 
     except Exception as e:
-        print(f"Erreur lors de la récupération des informations disque: {e}")
+        print(f"An error has occurred: {e}")
 
 
 
@@ -46,7 +46,7 @@ def get_gpu_model():
             print(f"GPU : {gpu.Name}")
 
     except Exception as e:
-        print(f"Erreur lors de la récupération des informations sur la carte graphique: {e}")
+        print(f"An error has occurred: {e}")
 
 def get_ram_model():
     try:
@@ -59,7 +59,7 @@ def get_ram_model():
             print(f"RAM : {ram.Model}")
 
     except Exception as e:
-        print(f"Erreur lors de la récupération des informations sur la RAM: {e}")
+        print(f"An error has occurred: {e}")
 
 
 def get_motherboard_model():
@@ -73,8 +73,18 @@ def get_motherboard_model():
             print(f"-------------\nMotherboard: {motherboard.Name}")
 
     except Exception as e:
-        print(f"Erreur lors de la récupération des informations sur la MB: {e}")
+        print(f"An error has occurred: {e}")
 
+
+def get_all_models():
+    try:
+        get_motherboard_model()
+        get_cpu_model()
+        get_gpu_model()
+        get_ram_model()
+        get_disk_model()
+    except Exception as e:
+        print(f"An error has occurred : {e}")
 
 
 
