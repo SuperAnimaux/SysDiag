@@ -18,7 +18,13 @@ Copy this project to your computer:
 git clone https://github.com/SuperAnimaux/SysDiag.git
 ```
 
-Run the main.py file:
+Install the requirements
+
+```bash
+pip install -r requirements.txt
+```
+
+Run main.py:
 
 ```bash
 python main.py
