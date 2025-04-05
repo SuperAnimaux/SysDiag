@@ -11,6 +11,5 @@ def get_BIOS_infos():
             print(f"-------------\nBIOS name: {BIOS.Name}\nBIOS version : {BIOS.Version}\nManufacturer : {BIOS.Manufacturer}\nSerial number : {BIOS.SerialNumber}\nStatus : {BIOS.Status}")
 
     except Exception as e:
-        print(e)
-
+        print(f"An error has occurred : {e}")
 

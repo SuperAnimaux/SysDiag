@@ -4,11 +4,10 @@ import os
 LOGS_PATH = r"C:\Windows\System32\winevt\Logs"
 
 def list_evtx_files(LOGS_PATH):
-    """Retourne la liste des fichiers journaux (.evtx)"""
+
     return [os.path.join(LOGS_PATH, f) for f in os.listdir(LOGS_PATH) if f.endswith(".evtx")]
 
 def check_evtx_integrity(file_path):
-    """Vérifie si un journal Windows est corrompu"""
     try:
         with Evtx.Evtx(file_path) as log:
             for i, record in enumerate(log.records()):
@@ -17,7 +16,7 @@ def check_evtx_integrity(file_path):
                 _ = record.xml()
         return True
     except Exception as e:
-        print(f"Erreur lors de la lecture de {file_path} : {e}")
+        print(f"An error has occurred : {e}")
         return False
 
 

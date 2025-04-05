@@ -2,11 +2,11 @@ import win32com.client
 
 def get_cpu_model():
     try:
-        # Connexion au service WMI
+
         wmi = win32com.client.Dispatch("WbemScripting.SWbemLocator")
         service = wmi.ConnectServer(".", "root\\cimv2")
 
-        # Récupérer les informations sur le processeur
+
         cpu_info = service.ExecQuery("SELECT * FROM Win32_Processor")
         for cpu in cpu_info:
             print(f"CPU : {cpu.Name}")
@@ -17,11 +17,10 @@ def get_cpu_model():
 
 def get_disk_model():
     try:
-        # Connexion au service WMI
         wmi = win32com.client.Dispatch("WbemScripting.SWbemLocator")
         service = wmi.ConnectServer(".", "root\\cimv2")
 
-        # Récupérer les informations sur le disque
+
         disk_info = service.ExecQuery("SELECT * FROM Win32_DiskDrive")
 
         for disk in disk_info:
@@ -35,11 +34,10 @@ def get_disk_model():
 
 def get_gpu_model():
     try:
-        # Connexion au service WMI
         wmi = win32com.client.Dispatch("WbemScripting.SWbemLocator")
         service = wmi.ConnectServer(".", "root\\cimv2")
 
-        # Récupérer les informations sur la carte graphique (Win32_VideoController)
+
         gpu_info = service.ExecQuery("SELECT * FROM Win32_VideoController")
 
         for gpu in gpu_info:

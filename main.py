@@ -10,6 +10,7 @@ from WindowsTools.windowsLogsCheck import show_list
 from WindowsTools.windowsLogsCheck import check_all_evtx
 from WindowsTools.windowsUpdate import checkUpdates
 from hardwareInfos.modelInfos import get_all_models
+from BIOS.BIOSInfos import get_BIOS_infos
 
 
 LOGS_PATH = r"C:\Windows\System32\winevt\Logs"
@@ -19,23 +20,15 @@ def main():
     print("Bienvenue")
 
     while True:
-        print("---------Commandes-------------")
-        print("Hardware information : hardwareInfos")
-        print("CPU information : cpuInfos")
-        print("GPU information : gpuInfos")
-        print("RAM information : ramInfos")
-        print("Disk information : diskInfos")
-        print("Disk Usage : diskUsage")
-        print("Check windows updates : checkWindowsUpdates")
-        print("Windows Logs list : windowsLogs")
-        print("Windows Logs integrity : windowsLogsCheck")
-        print("Arret : 0")
+        print("---------Command-------------\nHardware information : hardwareInfos\nBios information : biosInfos\nCPU information : cpuInfos\nGPU information : gpuInfos\nRAM information : ramInfos\nDisk information : diskInfos\nDisk Usage : diskUsage\nCheck windows updates : checkWindowsUpdates\nWindows Logs list : windowsLogs\nWindows Logs integrity : windowsLogsCheck\nExit : 0")
 
 
-        command = input("-------enter instruction------\n>> ").strip()
+        command = input("-------Enter instruction------\n>> ").strip()
 
         if command == "hardwareInfos":
-            hardwareInfos()
+            hardwareInfos(True)
+        elif command == "biosInfos":
+            hardwareInfos(False, True)
         elif command == "cpuInfos":
             CPU_infos()
         elif command == "gpuInfos":
@@ -94,6 +87,7 @@ def diskTools(usage=False, infos=False):
 
 
 def windowsTools(check=False, list=False, update=False):
+
     if check:
         if is_program_admin():
             try:
@@ -102,7 +96,7 @@ def windowsTools(check=False, list=False, update=False):
             except Exception as e:
                 print(f"An error has occurred : {e}")
         else:
-            print("admin need")
+            print("administrator permission required")
 
     if list:
         try:
@@ -113,16 +107,24 @@ def windowsTools(check=False, list=False, update=False):
 
     if update:
         try:
+            print("Please wait...")
             checkUpdates()
         except Exception as e:
             print(f"An error has occurred : {e}")
 
-def hardwareInfos():
-    try:
-        get_all_models()
+def hardwareInfos(hardware=False, bios=False):
+    if hardware:
+        try:
+            get_all_models()
 
-    except Exception as e:
-        print(f"An error has occurred : {e}")
+        except Exception as e:
+            print(f"An error has occurred : {e}")
+
+    if bios:
+        try:
+            get_BIOS_infos()
+        except Exception as e:
+            print(f"An error has occurred : {e}")
 
 def is_program_admin():
     try:
