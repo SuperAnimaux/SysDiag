@@ -1,5 +1,5 @@
 ## Preamble  
-This tool is designed to bring together in one place the necessary functionalities for diagnosing a computer running Windows as its operating system. This project is still in its early stages, is under development, and will continue to evolve. This tool does not support automatic diagnostics; it simply provides information to facilitate diagnostics.
+This tool is designed to bring together in one place the necessary functionalities for diagnosing a computer running Windows as its operating system. This project is still in its early stages, is under development, and will continue to evolve. **This tool does not support automatic diagnostics; it simply provides information to facilitate diagnostics.**
 
 ## Current Features
 * General information about the CPU
