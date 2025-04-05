@@ -1,28 +1,40 @@
-## Préambule  
-Cet outil est conçu pour réunir en un seul endroit les fonctionnalités nécessaires au diagnostic d'un ordinateur utilisant Windows comme système d'exploitation. Ce projet est uniquement à son début, il est en cours de développement et sera amené à évoluer.  
+## Preamble  
+This tool is designed to bring together in one place the necessary functionalities for diagnosing a computer running Windows as its operating system. This project is still in its early stages, is under development, and will continue to evolve. **This tool does not support automatic diagnostics; it simply provides information to facilitate diagnostics.**
 
-## Fonctionnalités actuelles  
+## Current Features
+* General information about the CPU
+* General information about the GPU
+* General information about the RAM
+* General information about storage
+* Visualization of storage usage (HDD/SSD)
+* Windows update check
+* Listing of Windows logs
+* Verification of Windows log integrity (admin)
 
-* Visualisation de la charge CPU  
-* Visualisation de l'utilisation de la RAM  
-* Informations générales sur le stockage
-* Visualisation de l'utilisation du stockage (HDD/SSD)  
-* Vérification des mises à jour Windows  
-* Listage des logs Windows  
-* Vérification de l'intégrité des logs Windows (admin)
+## Modules used
+
+* **evtx**, version : 0.8.9
+* **pywin32**, version : 308
+* **psutil**, version : 6.1.1
 
 ## Installation  
 
-Copiez ce projet sur votre ordinateur :  
+Copy this project to your computer:
 
 ```bash
 git clone https://github.com/SuperAnimaux/SysDiag.git
 ```
 
-Exécutez le fichier main.py :
+Install the requirements
+
+```bash
+pip install -r requirements.txt
+```
+
+Run main.py:
 
 ```bash
 python main.py
 ```
 
-**L'installation de Python et de certains modules annexes est nécessaire, des instructions plus précises seront disponibles dans les prochaines versions.**
+**The installation of Python and some additional modules is required.**
