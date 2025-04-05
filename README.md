@@ -10,6 +10,13 @@ This tool is designed to bring together in one place the necessary functionaliti
 * Windows update check
 * Listing of Windows logs
 * Verification of Windows log integrity (admin)
+
+## Modules used
+
+* **evtx**, version : 0.8.9
+* **pywin32**, version : 308
+* **psutil**, version : 6.1.1
+
 ## Installation  
 
 Copy this project to your computer:
@@ -30,4 +37,4 @@ Run main.py:
 python main.py
 ```
 
-**The installation of Python and some additional modules is required. More detailed instructions will be available in future versions.**
+**The installation of Python and some additional modules is required.**
